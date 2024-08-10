@@ -1,0 +1,26 @@
+.button01-cmp,
+.button02-cmp,
+.button03-cmp {
+  height: var(--button-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: .11rem;
+  font-size: .9rem;
+
+  &:hover {
+    background-color: #fff;
+    opacity: .9;
+    color: black !important;
+  }
+
+  &:active {
+    background-color: #d4d4d4;
+    opacity: .9;
+    color: black !important;
+  }
+}
