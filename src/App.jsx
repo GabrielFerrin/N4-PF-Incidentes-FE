@@ -11,7 +11,7 @@ function App() {
         <header>
           <nav className='nav-app'>
             <a href="#">
-              <img src="../../public/main-logo-light.svg" alt="Main logo"
+              <img src="main-logo-light.svg" alt="Main logo"
                 loading="lazy" height={25} />
             </a>
             <div className="buttons-wrap-app">
@@ -44,7 +44,7 @@ function App() {
                 </div>
               </div>
               <div className="hero-right-app">
-                <img src="../../public/condominio.png"
+                <img src="condominio.png"
                   alt="Condo image" loading="lazy" height={450} />
               </div>
             </div>
