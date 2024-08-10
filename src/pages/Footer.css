@@ -1,0 +1,27 @@
+/* FOOTER */
+
+.footer-cmp {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  color: rgb(126, 126, 126);
+  background-color: var(--bg03);
+}
+
+.footer-cmp .socials-home {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-cmp .socials-home img {
+  border-radius: var(--button-radius);
+  transition: all .3s ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+    background-color: #3f3f3f;
+  }
+}

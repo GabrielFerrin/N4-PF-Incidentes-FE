@@ -1,0 +1,37 @@
+/* HEADER */
+
+.header-cmp .nav-header {
+  position: fixed;
+  z-index: 1;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  max-width: 1200px;
+  transition: all .4s ease;
+}
+
+.header-cmp .nav-header.scrolled {
+  background-color: var(--bg-contrast);
+}
+
+.header-cmp .buttons-wrap-header {
+  display: flex;
+  gap: .5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .header-cmp .buttons-wrap-header {
+    flex-direction: column;
+  }
+
+  .header-cmp .nav-header .buttons-wrap-header {
+    display: none;
+  }
+
+  .header-cmp .nav-header {
+    padding-inline: 1rem;
+  }
+}

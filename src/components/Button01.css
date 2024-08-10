@@ -5,12 +5,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  text-wrap: nowrap;
   padding: 0 2rem;
   border-radius: var(--button-radius);
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: .11rem;
-  font-size: .9rem;
+  font-size: .8rem;
 
   &:hover {
     background-color: #fff;
