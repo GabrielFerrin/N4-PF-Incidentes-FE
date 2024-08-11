@@ -39,7 +39,7 @@ const Login = () => {
     console.log('validando...')
   }
 
-  const handleRegister = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault()
     const formData = new FormData(form.current)
     const data = Object.fromEntries(formData)
@@ -58,7 +58,7 @@ const Login = () => {
             <Input type="password" name="password"
               placeholder="Contraseña" onChange={validate} />
             <Button03 value="ACCEDER" color="black"
-              onClick={handleRegister} />
+              onClick={handleLogin} />
             {errors.length > 0 && <Errors errors={errors} />}
           </form>
         </section>

@@ -25,6 +25,7 @@ export const DataProvider = ({ children }) => {
   })
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_API)
     const tempToken = localStorage.getItem('token')
     if (tempToken) verify.mutate()
     else setToken('')
