@@ -25,7 +25,9 @@ export const DataProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    verify.mutate()
+    const tempToken = localStorage.getItem('token')
+    if (tempToken) verify.mutate()
+    else setToken('')
     // eslint-disable-next-line
   }, [])
 
