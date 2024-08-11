@@ -12,7 +12,6 @@
 
 .app-cmp {
   --button-radius: 5px;
-  --button-height: 45px;
   margin: 0 auto;
   max-width: 1350px;
   min-width: 300px;

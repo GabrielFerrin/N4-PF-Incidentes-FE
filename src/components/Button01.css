@@ -1,7 +1,7 @@
 .button01-cmp,
 .button02-cmp,
 .button03-cmp {
-  height: var(--button-height);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
