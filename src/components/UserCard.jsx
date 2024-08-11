@@ -2,11 +2,11 @@ import './UserCard.css'
 import Button02 from "./Button02"
 import Button03 from "./Button03"
 
-const UserCard = ({ key, user }) => {
+const UserCard = ({ user }) => {
 
 
   return (
-    <div key={key} className="user-card-cmp">
+    <div className="user-card-cmp">
       <div className="circle-user-card">
         <img src={user.name.toLowerCase() + '.jpg'}
           alt={user.name + ' profile image'} loading="lazy" height={150}

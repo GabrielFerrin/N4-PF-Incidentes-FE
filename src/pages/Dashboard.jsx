@@ -11,7 +11,9 @@ const Dashboard = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!token) navigate('/login')
+    setTimeout(() => {
+      if (!token) navigate('/login')
+    }, 2000);
     // eslint-disable-next-line
   }, [token])
 

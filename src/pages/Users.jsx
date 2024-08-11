@@ -15,20 +15,16 @@ const Users = () => {
   })
 
   useEffect(() => {
-    getUsers.mutate()
+    Object.keys(user).length !== 0 && getUsers.mutate()
     // eslint-disable-next-line
   }, [user])
-
-  useEffect(() => {
-    console.log(users)
-  }, [users])
 
   return (
     <div className="users-cmp">
       <h1>Users</h1>
       <div className="cards-users">
-        {users.length > 0 && users.map((user, i) => (
-          <UserCard key={i} user={user} />
+        {users.length > 0 && users.map((user) => (
+          <UserCard key={user.userId} user={user} />
         ))}
       </div>
     </div>

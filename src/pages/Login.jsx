@@ -36,7 +36,6 @@ const Login = () => {
   })
 
   const validate = () => {
-    console.log('validando...')
   }
 
   const handleLogin = (e) => {

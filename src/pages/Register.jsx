@@ -28,7 +28,6 @@ const Register = () => {
   })
 
   const validate = () => {
-    console.log('validando...')
   }
 
   const handleRegister = (e) => {
