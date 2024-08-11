@@ -1,0 +1,11 @@
+.input-cmp input {
+  height: 45px;
+  border: 1px solid #cacaca;
+  padding-inline: 1rem;
+  border-radius: var(--button-radius);
+  width: 100%;
+
+  &::placeholder {
+    color: #cacaca;
+  }
+}

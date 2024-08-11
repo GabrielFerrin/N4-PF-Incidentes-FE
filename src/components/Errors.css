@@ -1,0 +1,10 @@
+.errors-cmp {
+  border: 1px solid red;
+  border-radius: var(--button-radius);
+  padding: .7rem 1rem;
+  width: fit-content;
+  font-size: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}

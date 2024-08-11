@@ -9,12 +9,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 2.5rem 3rem;
-  max-width: 1200px;
+  max-width: 1350px;
   transition: all .4s ease;
 }
 
 .header-cmp .nav-header.scrolled {
-  background-color: var(--bg-contrast);
+  background-color: var(--bg-contrast) !important;
 }
 
 .header-cmp .buttons-wrap-header {

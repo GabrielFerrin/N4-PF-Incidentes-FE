@@ -2,9 +2,10 @@ import './Button03.css'
 
 const Button03 = ({ onClick, value, color }) => {
   return (
-    <div className='button03-cmp' onClick={onClick} style={{ color }}>
+    <button className='button03-cmp' onClick={onClick}
+      style={{ border: '1px solid ' + color, color }}>
       {value}
-    </div>
+    </button>
   )
 }
 

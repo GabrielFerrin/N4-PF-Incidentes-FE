@@ -9,7 +9,7 @@ const Home = () => {
   const navigate = useNavigate()
   return (
     <div className="home-cmp">
-      <Header />
+      <Header color='transparent' />
       <main>
         <section className='hero-sec-home'>
           <div className="hero-content-home">

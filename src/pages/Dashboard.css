@@ -1,0 +1,8 @@
+.dashboard-cmp {
+  background-color: var(--bg03);
+  min-height: 100vh;
+}
+
+.dashboard-cmp .content-dashboard {
+  padding: 1rem;
+}

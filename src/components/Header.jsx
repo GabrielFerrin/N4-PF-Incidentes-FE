@@ -2,9 +2,9 @@ import './Header.css'
 import { useEffect, useRef } from "react"
 import Button01 from "./Button01"
 import Button02 from "./Button02"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({ color }) => {
   const navigate = useNavigate()
   const nav = useRef(null)
   const handleScroll = () => {
@@ -22,11 +22,11 @@ const Header = () => {
 
   return (
     <header className="header-cmp">
-      <nav ref={nav} className='nav-header'>
-        <a href="#">
+      <nav ref={nav} className='nav-header' style={{ backgroundColor: color }}>
+        <Link to="/home">
           <img src="main-logo-light.svg" alt="Main logo"
             loading="lazy" height={25} />
-        </a>
+        </Link>
         <div className="buttons-wrap-header">
           <Button01 value="INGRESAR" color="white"
             onClick={() => { navigate('/login') }} />
@@ -37,4 +37,7 @@ const Header = () => {
     </header>
   )
 }
+
+Header.propTypes = null
+
 export default Header
