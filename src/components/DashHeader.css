@@ -1,0 +1,38 @@
+.dash-header-cmp .nav-header {
+  background-color: #28114d;
+  position: fixed;
+  z-index: 1;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  max-width: 1350px;
+  transition: all 1s ease;
+}
+
+.dash-header-cmp .nav-header.scrolled {
+  background-color: var(--bg-header) !important;
+}
+
+.dash-header-cmp .user-wrap-dash-header {
+  color: var(--text-contrast02);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-header-cmp .circle-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b3b3b3;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+
+.dash-header-cmp .circle-dash-header>img {
+  border-radius: 50%;
+}

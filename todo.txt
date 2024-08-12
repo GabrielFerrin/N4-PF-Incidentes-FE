@@ -1,0 +1,4 @@
+DashNav:
+- Inicialmente los datos del main user, y en incidents los datos del
+  impersonating user
+- A la misma medida del nav de home y también fixed

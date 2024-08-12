@@ -2,7 +2,9 @@
   --bg01: #331269;
   --bg02: #e7efff;
   --bg03: #fff;
-  --bg-contrast: #28114d;
+  --bg-header: #28114dfa;
+  --text-contrast01: black;
+  --text-contrast02: white;
 }
 
 .app-cmp-wrapper {

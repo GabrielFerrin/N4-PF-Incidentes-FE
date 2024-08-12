@@ -14,7 +14,7 @@
 }
 
 .header-cmp .nav-header.scrolled {
-  background-color: var(--bg-contrast) !important;
+  background-color: var(--bg-header) !important;
 }
 
 .header-cmp .buttons-wrap-header {

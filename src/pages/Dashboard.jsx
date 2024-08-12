@@ -1,35 +1,27 @@
 import './Dashboard.css'
-import { useContext } from "react"
-import { DataContext } from "../context/DataContext"
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Users from './Users'
 import Incidents from './Incidents'
-import DashNav from '../components/DashNav'
+import DashHeader from '../components/DashHeader'
+import DashSideNav from '../components/DashSideNav'
 
 const Dashboard = () => {
-  const { setToken, setUser } = useContext(DataContext)
-  const navigate = useNavigate()
-
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    setToken('')
-    setUser({})
-    navigate('/login')
-  }
+  
 
   return (
     <div className="dashboard-cmp">
-      <DashNav />
-      <button onClick={handleLogout}>logout</button>
-      <button onClick={() => navigate('/dashboard/users')}>Users</button>
-      <div className="content-dashboard">
-        <Routes>
-          <Route path="users" element={<Users />} />
-          <Route path="incidents" element={<Incidents />} />
-          <Route path="*" element={<Users />} />
-        </Routes>
-      </div>
-    </div>
+      <DashHeader />
+      <main className="main-dashboard">
+        <DashSideNav />
+        <div className="content-dashboard">
+          <Routes>
+            <Route path="users" element={<Users />} />
+            <Route path="incidents" element={<Incidents />} />
+            <Route path="*" element={<Users />} />
+          </Routes>
+        </div>
+      </main>
+    </div >
   )
 }
 

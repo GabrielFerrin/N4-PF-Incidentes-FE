@@ -1,0 +1,9 @@
+.dash-sidenav-cmp {
+  padding-top: 100px;
+  width: 200px;
+  background-color: var(--bg02);
+}
+
+.dash-sidenav-cmp .content-sidenav {
+  opacity: 0;
+}

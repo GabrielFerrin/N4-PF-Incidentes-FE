@@ -7,6 +7,7 @@ import Footer from './Footer'
 
 const Home = () => {
   const navigate = useNavigate()
+  
   return (
     <div className="home-cmp">
       <Header color='transparent' />
