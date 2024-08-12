@@ -1,5 +1,5 @@
 import './Dashboard.css'
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import { Route, Routes, useNavigate } from "react-router-dom"
 import Users from './Users'
@@ -7,15 +7,8 @@ import Incidents from './Incidents'
 import DashNav from '../components/DashNav'
 
 const Dashboard = () => {
-  const { setToken, token, setUser } = useContext(DataContext)
+  const { setToken, setUser } = useContext(DataContext)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (!token) navigate('/login')
-    }, 2000);
-    // eslint-disable-next-line
-  }, [token])
 
   const handleLogout = () => {
     localStorage.removeItem('token')

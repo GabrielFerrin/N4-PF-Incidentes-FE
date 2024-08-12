@@ -10,7 +10,7 @@
 }
 
 .home-cmp .hero-sec-home {
-  background-image: url('hero-img.png');
+  background-image: url('/hero-img.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

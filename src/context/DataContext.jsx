@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useMutation } from "react-query";
+import { useLocation, useNavigate } from "react-router";
 
 export const DataContext = createContext()
 
@@ -8,6 +9,10 @@ export const DataProvider = ({ children }) => {
   const api = axios.create({ baseURL: import.meta.env.VITE_API })
   const [user, setUser] = useState({})
   const [token, setToken] = useState('')
+  const navigate = useNavigate()
+  const location = useLocation()
+  const restrictedRoutes = ['/dashboard', '/dashboard/users', '/dashboard/incidents']
+
 
   const verify = useMutation(async () => {
     const tempToken = localStorage.getItem('token')
@@ -20,14 +25,23 @@ export const DataProvider = ({ children }) => {
       setToken(data.user.token)
     },
     onError: () => {
-      setToken('')
+      setToken('');
+      if (restrictedRoutes.includes(location.pathname)) {
+        navigate('/login');
+      }
     }
   })
 
   useEffect(() => {
-    const tempToken = localStorage.getItem('token')
-    if (tempToken) verify.mutate()
-    else setToken('')
+    const tempToken = localStorage.getItem('token');
+    if (tempToken) {
+      verify.mutate();
+    } else {
+      setToken('');
+      if (restrictedRoutes.includes(location.pathname)) {
+        navigate('/login');
+      }
+    }
     // eslint-disable-next-line
   }, [])
 

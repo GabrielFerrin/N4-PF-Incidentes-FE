@@ -8,7 +8,7 @@ const UserCard = ({ user }) => {
   return (
     <div className="user-card-cmp">
       <div className="circle-user-card">
-        <img src={user.name.toLowerCase() + '.jpg'}
+        <img src={'/' + user.name.toLowerCase() + '.jpg'}
           alt={user.name + ' profile image'} loading="lazy" height={150}
           width={150} />
       </div>

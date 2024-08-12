@@ -1,0 +1,14 @@
+{
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.jsx",
+    "src/**/*.tsx",
+    "src/**/*.css",
+    "src/**/*.html"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
