@@ -1,12 +1,11 @@
 import './Users.css'
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { useMutation } from "react-query"
 import { DataContext } from "../context/DataContext"
 import UserCard from "../components/UserCard"
 
 const Users = () => {
-  const { user, getUsersReq } = useContext(DataContext)
-  const [users, setUsers] = useState([])
+  const { user, getUsersReq, users, setUsers } = useContext(DataContext)
 
   const getUsers = useMutation(getUsersReq, {
     onSuccess: (data) => {
@@ -15,6 +14,9 @@ const Users = () => {
   })
 
   useEffect(() => {
+    if (!Object.keys(user).length) {
+      // set
+    }
     Object.keys(user).length !== 0 && getUsers.mutate()
     // eslint-disable-next-line
   }, [user])

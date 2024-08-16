@@ -32,7 +32,8 @@ const Login = () => {
     },
     onError: (error) => {
       setErrors([error.response.data.message])
-    }
+    },
+    
   })
 
   const validate = () => {
@@ -57,7 +58,7 @@ const Login = () => {
             <Input type="password" name="password"
               placeholder="Contraseña" onChange={validate} />
             <Button03 value="ACCEDER" color="black"
-              onClick={handleLogin} />
+              onClick={handleLogin} loading={login.isLoading} />
             {errors.length > 0 && <Errors errors={errors} />}
           </form>
         </section>

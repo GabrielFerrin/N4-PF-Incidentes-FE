@@ -8,22 +8,57 @@ import { DataContext } from '../context/DataContext'
 import { useMutation } from 'react-query'
 import Errors from '../components/Errors'
 import { useNavigate } from 'react-router-dom'
+import Loader from '../components/Loader'
+import Checkmark from '../icons/Checkmark'
 
 const Register = () => {
-  const { registerReq } = useContext(DataContext)
+  const { registerReq, createUsersReq, createIncidentsReq, setToken
+   } = useContext(DataContext)
   const [errors, setErrors] = useState([])
+  const [showCreating, setShowCreating] = useState(false)
   const navigate = useNavigate()
   const form = useRef(null)
 
   const register = useMutation(registerReq, {
     onSuccess: (data) => {
-      if (data.success)
-        navigate('/login')
+      if (data.success) {
+        setToken(data.user.token)
+        localStorage.setItem('token', data.user.token)
+        setShowCreating(true)
+        createUsers.mutate(data.user.token)
+        createIncidents.mutate(data.user.token)
+      }
       else
         setErrors([data.message])
     },
     onError: (error) => {
       setErrors(error.response.data.message)
+    }
+  })
+
+  const createUsers = useMutation(createUsersReq, {
+    onSuccess: (data) => {
+      if (data.success)
+        console.log(data)
+      else
+        console.log('error:', data)
+    },
+    onError: (error) => {
+      console.log('errors:', error)
+    }
+  })
+
+  const createIncidents = useMutation(createIncidentsReq, {
+    onSuccess: (data) => {
+      if (data.success) {
+        navigate('/dashboard')
+        console.log(data)
+      }
+      else
+        console.log('error:', data)
+    },
+    onError: (error) => {
+      console.log('errors:', error)
     }
   })
 
@@ -51,9 +86,26 @@ const Register = () => {
             <Input type="number" name="code"
               placeholder="Código" onChange={validate} />
             <Button03 value="REGISTRARME" color="black"
-              onClick={handleRegister} />
+              onClick={handleRegister} loading={register.isLoading} />
             {errors.length > 0 && <Errors errors={errors} />}
           </form>
+          {showCreating &&
+            <div className="info-card-register">
+              <div className="card-item-register">
+                <div className="item-icon-register">
+                  {createUsers.isLoading && <Loader />}
+                  {createUsers.isSuccess && <Checkmark />}
+                </div>
+                <span>Creando usuarios de prueba</span>
+              </div>
+              <div className="card-item-register">
+                <div className="item-icon-register">
+                  {createIncidents.isLoading && <Loader />}
+                  {createIncidents.isSuccess && <Checkmark />}
+                </div>
+                <span>Creando incidentes de prueba</span>
+              </div>
+            </div>}
         </section>
       </main>
       <Footer />

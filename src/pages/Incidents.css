@@ -1,0 +1,10 @@
+.incidents-cmp .cards-incidents {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.incidents-cmp .incidents-header {
+  display: flex;
+}

@@ -1,10 +1,11 @@
 .app-cmp-wrapper.light {
-  --bg01: #331269;
+  --bg01: #28114d;
   --bg02: #e7efff;
   --bg03: #fff;
   --bg-header: #28114dfa;
   --text-contrast01: black;
   --text-contrast02: white;
+  --main-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
 .app-cmp-wrapper {
@@ -15,7 +16,7 @@
 .app-cmp {
   --button-radius: 5px;
   margin: 0 auto;
-  max-width: 1350px;
+  max-width: 1500px;
   min-width: 300px;
   min-height: 100vh;
 }

@@ -1,9 +1,19 @@
 import './UserCard.css'
 import Button02 from "./Button02"
 import Button03 from "./Button03"
+import { useNavigate } from 'react-router'
+import { useContext } from 'react'
+import { DataContext } from '../context/DataContext'
 
 const UserCard = ({ user }) => {
+  const navigate = useNavigate()
+  const { setSubUser } = useContext(DataContext)
 
+  const handleOnUse = () => {
+    localStorage.setItem('subUser', user.userId)
+    setSubUser(user)
+    navigate('incidents')
+  }
 
   return (
     <div className="user-card-cmp">
@@ -19,7 +29,8 @@ const UserCard = ({ user }) => {
         {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
       </span>
       <div className="button-wrap-user-card">
-        <Button03 value="USAR" color="#4d4d4d" small={true} />
+        <Button03 value="USAR" color="#4d4d4d" small={true}
+          onClick={handleOnUse} />
         <Button02 value="EDITAR" small={true} color="white" />
       </div>
     </div>

@@ -1,10 +1,11 @@
 import './Button02.css'
+import Loader from './Loader'
 
-const Button02 = ({ onClick, value, color, small = false }) => {
+const Button02 = ({ onClick, value, color, small = false, loading = false }) => {
   return (
     <button className='button02-cmp' onClick={onClick}
       style={{ color, height: small ? 35 : 45 }}>
-      {value}
+      {loading ? <Loader /> : value}
     </button>
   )
 }

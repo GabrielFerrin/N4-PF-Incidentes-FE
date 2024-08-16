@@ -1,5 +1,5 @@
 .dash-header-cmp .nav-header {
-  background-color: #28114d;
+  background-color: var(--bg01);
   position: fixed;
   z-index: 1;
   height: 75px;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2.5rem 3rem;
-  max-width: 1350px;
+  max-width: 1500px;
   transition: all 1s ease;
 }
 
